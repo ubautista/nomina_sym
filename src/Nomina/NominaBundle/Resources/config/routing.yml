@@ -1,0 +1,21 @@
+NominaBundle_homepage:
+    pattern:  /
+    defaults: { _controller: NominaBundle:Usuario:list }
+
+NominaBundle_usuario_crear:
+    pattern:  /crear
+    defaults: { _controller: NominaBundle:Usuario:crear }
+
+NominaBundle_usuario_editar:
+    pattern:  /editar/{id}
+    defaults: { _controller: NominaBundle:Usuario:editar }    
+
+NominaBundle_usuario_borrar:
+    pattern:  /borrar/{id}
+    defaults: { _controller: NominaBundle:Usuario:borrar }
+
+NominaBundle_usuario_salario:
+    pattern:  /add_salario/{id}
+    defaults: { _controller: NominaBundle:Usuario:add_salario }
+
+        

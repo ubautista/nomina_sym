@@ -1,0 +1,8 @@
+NominaBundle:
+    resource: "@NominaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+procesar:
+    resource: "@NominaBundle/Resources/config/routing_nomina.yml"
+    prefix:   /nomina    
+    

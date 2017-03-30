@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+        <title>{% block title %}Nomina {% endblock %} - test ingreso</title>
+        
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        {% block stylesheets %}
+	        <link href="{{ asset('css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+	        <link href="{{ asset('css/bootstrap-theme.min.css') }}" type="text/css" rel="stylesheet" />
+	        <link href="{{ asset('css/bootstrap-responsive.css') }}" type="text/css" rel="stylesheet" />
+	        <link href="{{ asset('css/form_nomina.css') }}" type="text/css" rel="stylesheet" />
+	    {% endblock stylesheets %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+    <!-- Navigation -- Static navbar -->
+    
+    <!-- Contenido de los formularios -->
+    <nav class="navbar-default navbar-static-top">
+    	
+    </nav>
+        <section id="wrapper" >
+        
+
+            <section class="container">
+            	<a href="{{ path('NominaBundle_usuario_crear') }}" class="btn btn-primary" > Agregar usuario </a>
+            	<a href="{{ path('NominaBundle_homepage') }}"  class="btn btn-primary" > Listado usuarios </a>
+            	<a href="{{ path('procesar_nomina') }}" class="btn btn-primary"> Procesar nomina </a>
+            	 
+                {% block body %}{% endblock %}
+            </section>
+            <div id="footer" class="container">
+                {% block footer %}
+                    Nomina sym   </a>
+                {% endblock %}
+            </div>
+        </section>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

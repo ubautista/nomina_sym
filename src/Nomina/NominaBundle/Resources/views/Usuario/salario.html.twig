@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+{% block title %} Agregar salario {% endblock %}
+{% block pageid 'usuarios' %}
+{% block body %}
+<form action="" method="POST" class='form_nomina'>
+<div class="panel-heading"> <h3>Salario usuario</h3></div>
+   <div class="panel-body">
+	{{ form_widget(form) }}
+	<div>
+	<input type="submit" value="Guardar" class="btn btn-primary"/>
+	</div>
+	<div>
+	<a href="{{ path('NominaBundle_homepage') }}" class="btn btn-primary"> Cancelar </a>
+	</div>
+	</div>		
+</form>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "::base.html.twig" %}
+{% block title %} Listado de usuarios {% endblock %}
+{% block pageid 'usuarios' %}
+
+{% block body %}
+<br>
+     {% if app.session.flashBag.has('notice') %}
+            {% for msg in app.session.flashBag.get('notice') %}
+                <script language='javascript'>alert ('{{ msg }}');</script>
+            {% endfor %}        
+    {% endif %}
+ 
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>cedula</th>
+			<th>Telefono</th>
+			<th>correo</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<body>
+		{% for usuario in arr_usuarios %}
+		<tr>
+			<td>{{ usuario.id }}</td>
+			<td>{{ usuario.nombre }}</td>
+			<td>{{ usuario.apellidos }}</td>
+			<td>{{ usuario.cedula }}</td>
+			<td>{{ usuario.telefono }}</td>
+			<td>{{ usuario.correo }}</td>
+			<td>
+				<a href="{{ path('NominaBundle_usuario_editar', {'id':usuario.id} ) }}" >Editar</a>
+				<a href="{{ path('NominaBundle_usuario_salario', {'id':usuario.id} ) }}" >Agregar salario</a>
+				<a href="{{ path('NominaBundle_usuario_borrar', {'id':usuario.id} ) }}" onClick='return confirm(" ¿Esta seguro que desea eliminar el usuario ?");' >borrar</a>
+			</td>
+		</tr>
+		{% else %}
+		<tr>
+			<td colspan="6">
+				No hay usuarios registrados
+			</td>
+		</tr>
+		{% endfor %}
+	</body>
+</table>
+{% endblock %}

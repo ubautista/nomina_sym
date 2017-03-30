@@ -1,0 +1,42 @@
+{% extends "::base.html.twig" %}
+{% block title %} Listado de nomina {% endblock %}
+{% block pageid 'nomina' %}
+
+{% block body %}
+<br>
+ 
+<table  class="table table-striped">
+	<thead>
+		<tr>
+			<th>cedula</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>Sueldo base</th>
+			<th>Pension</th>
+			<th>Eps</th>
+			<th>Sueldo devengado</th>
+		</tr>
+	</thead>
+	<body>
+		
+		{% for nomina in arr_nomina %}
+		<tr>
+			<td>{{ nomina.cedula }}</td>
+			<td>{{ nomina.nombre }}</td>
+			<td>{{ nomina.apellidos }}</td>
+			<td>{{ nomina.sueldo_base }}</td>
+			<td>{{ nomina.pension }}</td>
+			<td>{{ nomina.eps }}</td>
+			<td>{{ nomina.valor_devengado }}</td>
+		</tr>
+		{% else %}
+		<tr>
+			<td colspan="6">
+				No hay registros
+			</td>
+		</tr>
+		{% endfor %}
+		
+	</body>
+</table>
+{% endblock %}

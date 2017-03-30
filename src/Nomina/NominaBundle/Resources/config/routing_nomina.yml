@@ -1,0 +1,3 @@
+procesar_nomina:
+    pattern:  /procesar
+    defaults: { _controller: NominaBundle:Nomina:procesar }

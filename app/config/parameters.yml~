@@ -1,0 +1,17 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: nomina_sym
+    database_user: usuario_nomina
+    database_password: password_nomina
+    mailer_transport: smtp
+    mailer_encryption: ssl
+    mailer_auth_mode: login
+    mailer_host: smtp.mail.com
+    mailer_user: mail_usuario@correo.org
+    mailer_password: abcdef1
+    locale: es
+    secret: ThisTokenIsNotSoSecretChangeIt
+
+    
